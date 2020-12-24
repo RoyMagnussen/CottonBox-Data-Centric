@@ -7,11 +7,120 @@ There aren't many sites that provides designer Korean women's clothing to the Ta
 Cotton Box does this by providing new and returning customers a modern, stylish website that is also easy to navigate.
  
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+### User Stories
+
+#### Navigation
+
+- As an online user, when I load any page, I would like to see a responsive navigation that collapses when viewed on smaller screens such as phones, so that it is easier to navigate.
+    - As an online user, when I use the navigation, I would like to see a link to the available category pages, so that I may visit these pages quickly and more easily view the products of that category.
+    - As an online user, when I use the navigation, I would like to navigate to the about page, so that I may find out more information about the company.
+    - As an online user, when I use the navigation, I would like to navigate to the contact page, so that I may talk to the company about an enquiry, issue or compliment.
+    - As a mandarin-speaking user, I would like to change the display language of the website so that I may navigate and understand the website more easily.
+    - As an online user, I would like to navigate to the shopping cart page so that I may check my items before I purchase them.
+    - As an online user, I would like to see how many products are in the shopping cart, so that I may edit them in the shopping cart if they are incorrect.
+    - As an online user, I would like to search for a product or a category of products, so that I may find the product(s) that I am looking for faster.
+
+#### Callout Section
+
+- As an online user, when I load the home page, I would like a section where I can be notified of any sales, events or situations that are currently underway, so that it may be encouraged to buy those products or to find out more information.
+    - As an online user, once I have finished reading about the sales, events or situations, I would like to close the section so that I can free up space on the screen.
+    - As an online user, when I have closed the section, I would like to not see the section again when I reload the page.
+
+#### Latest Products Section
+
+- As an online user, when I load the home page, I would like to see a section that displays the latest products that the company has to offer, so that I may be encouraged to buy them.
+    - As an online user, when I see the latest products, I would like to see an image of the product so that I may know how it looks.
+    - As an online user, when I see the latest products, I would like to know the name of the product, so that I may remember the name if I need to search for it in the future.
+    - As an online user, when I see the latest products, I would like to know the price of the product, so that I can determine if it is too expensive for me or if I can buy it.
+    - As an online user, when I see the latest products, I would like to visit the product page, so that I may gain more information about the product.
+    - As an online user, when I see the latest products, I would like to be able to add the product into the shopping cart quickly, so that I may buy the product.
+
+#### Add To Cart Modal
+
+- As an online user, when I add the product into the shopping cart, I would like to be asked about which size, colour and quantity of the product I would like, so that I may get the best version of the product and number that I want.
+    - As an online user, when I add the product into the shopping cart, I would like to see the image and the information of the product that I am adding so that I can be sure that it is the correct product being added into the shopping cart.
+    - As an online user, when I have added the product to the shopping cart, I would like to be notified that it has successfully been added into the shopping cart, so that I may continue shopping.
+
+#### Categories Section
+
+- As an online user, when I load the home page, I would like to see a section where all of the available categories are displayed for me to see so that I can visit that particular category page and view all products of that category.
+    - As an online user, I would like to see an image to represent the category, so that I can quickly identify that it is the correct category I am looking for.
+    - As an online user, I would like to see the name of the category, so that I can navigate to the correct category page.
+    - As an online user, I would like to visit the category page of that particular category, so that I can view all products of that category.
+
+#### Footer
+
+- As an online user, when I load any page, I would like to see a responsive footer that changes the layout when viewed on smaller screens such as phones, so that it is easier to navigate.
+    - As an online user, when I use the footer, I would like to see a link to a sitemap page, so that I may view all links in the website to quickly navigate to the correct page.
+    - As an online user, I would like to see a link to the cookie policy page, so that I may know what data is being stored on my computer.
+    - As an online user, I would like to see some contact information for the company such as an email, phone number and an address, so that I can contact them without going to the contact page.
+    - As an online user, I would like to see that there are links to any social media accounts that the company has, so that I may follow them on the respective platforms and stay up to date with the company.
+
+#### Cookie Notification Alert
+
+- As an online user, when I load any page, I would like to see a cookies notification alert, so that I am aware that the website uses cookies.
+    - As an online user, when I accept the use of cookies, I would like that the cookie notification alert is not displayed again when I reload the page.
+    - As an online user, when I want to learn more about what type of data is being stored on my computer, I would like to go to the cookie policy page when I click the button to learn more.
+
+#### Category Page
+
+- As an online user, when I load any category page, I would like to see that all of the available products for that category are displayed to me, so that I may look through them and potentially buy them.
+    - As an online user, I would like to see that there is a filter for the products, so that I may reduce the number of products that are displayed to me so I can find the product I want more quickly.
+    - As an online user, I would like to see that there is a section where I can set the number of products per page, so that I may view more or fewer products per page.
+    - As an online user, I would like to see that there is a pagination section where I can go to the next or previous pages of products based on the number of products displayed and the number of products available.
+    - As an online user, I would like to see a section where all of the selected numbers of items are displayed, so that I may look at the information and potentially buy them.
+    - As an online user, when I go to the section where the products are being displayed, I would like to see an image of the product, so that I may know how it looks.
+    - As an online user, when I go the the section where the products are being displayed, I would like to see the name of the products, so that I may remember the product if I need to search for it again.
+    - As an online user, when I go to the section where the products are being displayed, I would like to see the price of the product, so that I may know if it is too expensive for me or if I can buy it.
+    - As an online user, when I got to the section where the products are being displayed, I would like to be able to go to the products page, so that I may find more information about it.
+    - As an online user, when I go to the section where the products are being displayed, I would like to be able to add the product into the shopping cart quickly, so that I may buy the product.
+
+#### Product Page
+
+- As an online user, when I go to any product page, I would like to see all of the details of the product, so that I may gain more information about it.
+    - As an online user, when I go to a products page, I would like to see a slideshow of all of the product images, so that I may look at the product from different perspectives.
+    - As an online user, when I go to a products page, I would like to see all of the details of the product such as the name, price, product id and if the product is on sale or not so that I am encouraged to buy the product.
+    - As an online user, when I go to the products page, I would like to be able to add the product into the shopping cart, so that I may buy the product.
+
+#### About Page
+
+- As an online user, when I load the about page, I would like to see information about the company, so that I might get to know them better.
+    - As an online user, when I visit the about page, I would like to see who created the company and why it was created, so that I may get to know them better.
+    - As an online user, when I visit the about page, I would like to see a map of where the company is located, so that I may send a letter to the company to contact them.
+
+#### Contact Page
+
+- As an online user, when I load the contact page, I would like to see a way for me to contact the company, so that I may talk to them about an issue or to give feedback.
+    - As an online user, when I visit the contact page, I would like to see that there is a form where I can fill out my details such as my name, email address, the subject and the message I wish to send.
+    - As an online user, when I send the email, I would like to see a message thanking me for contacting the company and that they will be in contact with me shortly so that I know the email was sent successfully.
+
+#### Sitemap Page
+
+- As an online user, when I load the sitemap page, I would like to see all available links of the website, so that I may find the page I am looking for more quickly.
+
+#### Cookie Policy Page
+
+- As an online user, when I load the cookie policy page, I would like to see information about what data is being stored on my computer, so that I can determine whether I want it or not.
+    - As an online user, I would like to see how to disable cookies from the website, so that I can set that I do not want cookies to be saved to my device from this website.
+
+#### Shopping Cart Page
+
+- As an online user, when I load the shopping cart page I would like to see all of the products that I have added so that I can check to see if they are all correct so that I can buy them.
+    - As an online user, when I view the products that have been added into the shopping cart, I would like to see an image of the product, so that I am reminded of what the product looks like.
+    - As an online user, when I view the products that have been added into the shopping cart, I would like to see details of the product such as the name, price, id, selected colour, selected size and the selected quantity, so that I can confirm the details are correct.
+    - As an online user, when I view the products that have been added into the shopping cart, I would like to see a way for me to edit the product, so that I may change the details if they are wrong.
+    - As an online user, when I edit a product in the shopping cart, I would like to see that I change the details such as the selected colour, selected size and selected quantity so that I can buy the correct product.
+    - As an online user, when I view the products that have been added into the shopping cart, I would like to see a way for me to remove the product from the shopping cart so that I can edit the final products that I buy.
+    - As an online user, I would like to see a way for me to check out the products that are in the shopping cart so that I can buy them.
+
+#### Checkout Page
+
+- As an online user, when I load the checkout page, I would like to see a form where I can enter in my address so that the products can be delivered to my address.
+    - As an online user, I would like to edit the address form so that I can correct any mistakes that I have made.
+    - As an online user, I would like to purchase the products, so that they get delivered to my address and I can enjoy them.
+    - As an online user, when I purchase the products, I would like to see a message thanking me for buying the products as well as notify me that the products are being delivered to me.
+    - As an online user, I would like to see a way back to the home page once I have purchased the products, so that I may look at other products and potentially buy them.
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
