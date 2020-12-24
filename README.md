@@ -1,8 +1,10 @@
-# Your Project's Name
+# Cotton Box
 
-One or two paragraphs providing an overview of your project.
+Cotton Box is an E-Commerce site that sells designer Korean women's clothing mainly for the Taiwanese market, but also internationally.
 
-Essentially, this part is your sales pitch.
+There aren't many sites that provides designer Korean women's clothing to the Taiwanese market, and Cotton Box is the solution.
+
+Cotton Box does this by providing new and returning customers a modern, stylish website that is also easy to navigate.
  
 ## UX
  
