@@ -5,6 +5,38 @@ Cotton Box is an E-Commerce site that sells designer Korean women's clothing mai
 There aren't many sites that provides designer Korean women's clothing to the Taiwanese market, and Cotton Box is the solution.
 
 Cotton Box does this by providing new and returning customers a modern, stylish website that is also easy to navigate.
+
+## Table of Content
+
+- [Cotton Box](#cotton-box)
+  - [Table of Content](#table-of-content)
+  - [UX](#ux)
+    - [User Stories](#user-stories)
+      - [Navigation](#navigation)
+      - [Callout Section](#callout-section)
+      - [Latest Products Section](#latest-products-section)
+      - [Add To Cart Modal](#add-to-cart-modal)
+      - [Categories Section](#categories-section)
+      - [Footer](#footer)
+      - [Cookie Notification Alert](#cookie-notification-alert)
+      - [Category Page](#category-page)
+      - [Product Page](#product-page)
+      - [About Page](#about-page)
+      - [Contact Page](#contact-page)
+      - [Sitemap Page](#sitemap-page)
+      - [Cookie Policy Page](#cookie-policy-page)
+      - [Shopping Cart Page](#shopping-cart-page)
+      - [Checkout Page](#checkout-page)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Technologies Used](#technologies-used)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
  
 ## UX
 
