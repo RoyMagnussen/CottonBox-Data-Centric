@@ -27,6 +27,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [Cookie Policy Page](#cookie-policy-page)
       - [Shopping Cart Page](#shopping-cart-page)
       - [Checkout Page](#checkout-page)
+    - [Wireframes](#wireframes)
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Features Left to Implement](#features-left-to-implement)
@@ -154,7 +155,9 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
     - As an online user, when I purchase the products, I would like to see a message thanking me for buying the products as well as notify me that the products are being delivered to me.
     - As an online user, I would like to see a way back to the home page once I have purchased the products, so that I may look at other products and potentially buy them.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+### Wireframes
+
+The wireframes for the project can be found [here](docs/wireframes.pdf).
 
 ## Features
 
