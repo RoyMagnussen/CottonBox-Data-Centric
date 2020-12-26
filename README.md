@@ -36,6 +36,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
         - [1.3 Language Selection Dropdown Menu](#13-language-selection-dropdown-menu)
         - [1.4 Shopping Cart Link](#14-shopping-cart-link)
         - [1.5 Search Bar](#15-search-bar)
+      - [2. Callout Section](#2-callout-section)
+        - [2.1 Callout Close Button](#21-callout-close-button)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -204,6 +206,16 @@ I have created a link to the `shopping cart` page which also displays the total 
 I have created a search bar where users are able to search for products which redirect them to the `search results` page when they press enter.
 
 > Currently the lin does not work as I have not implemented the search function or the `search results` page.
+
+#### 2. Callout Section
+
+I have created a callout section that is dismissible by the user so that screen space can be regained.
+
+The callout will also remain dismissed once already dismissed and the page is reloaded.
+
+##### 2.1 Callout Close Button
+
+When this button is clicked by the user, it triggers a jQuery function which sets a cookie. If the page is reloaded, the page will check to see if the cookie has been set, if so then the callout will not be displayed.
 
 ### Features Left to Implement
 - Another feature idea
