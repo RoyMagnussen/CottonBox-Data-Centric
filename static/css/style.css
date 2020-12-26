@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: "Raleway", sans-serif;
+    color: #333 !important;
+}
+
+body {
+    background-color: #f6f5f0;
+}
+
+/* ------------------------- Navigation ------------------------- */
+.logo {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem;
+}
+
+.search-bar {
+    border-bottom: 1px solid #333 !important;
+}
