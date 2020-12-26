@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand logo" href="{{ url_for('en_index') }}">Cotton Box</a>
+        <!-- Collapse Shopping Cart Icon -->
+        <ul class="navbar-nav ms-auto d-inline d-lg-none me-2">
+            <li class="nav-item">
+                <!-- TODO: Add url_for function for shopping cart page -->
+                <a href="#" class="nav-link">
+                    <i class="bi bi-cart"></i>
+                    <span class="badge rounded-pill bg-light">{{ total_items }}</span>
+                </a>
+            </li>
+        </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots-vertical"></i>
         </button>
@@ -31,6 +41,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                <!-- Language Selection Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="languageSelectionDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
                         EN
@@ -44,6 +55,14 @@
                         </li>
                         {% endfor %}
                     </ul>
+                </li>
+                <!-- Shopping Cart Icon -->
+                <li class="nav-item d-none d-lg-inline">
+                    <!-- TODO: Add url_for function for shopping cart page -->
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-cart"></i>
+                        <span class="badge rounded-pill bg-light">{{ total_items }}</span>
+                    </a>
                 </li>
             </ul>
         </div>
