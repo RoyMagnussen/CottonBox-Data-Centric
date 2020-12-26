@@ -17,6 +17,11 @@ body {
     background-color: #f6f5f0;
 }
 
+/* ------------------------- Text and Colours ------------------------- */
+.section-heading {
+    font-family: "Permanent Marker", cursive;
+}
+
 /* ------------------------- Navigation ------------------------- */
 .logo {
     font-family: "Permanent Marker", cursive;
