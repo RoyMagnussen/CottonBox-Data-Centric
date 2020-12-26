@@ -30,6 +30,12 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
     - [Wireframes](#wireframes)
   - [Features](#features)
     - [Existing Features](#existing-features)
+      - [1. Navigation](#1-navigation)
+        - [1.1 Categories Dropdown Menu](#11-categories-dropdown-menu)
+        - [1.2 About And Contact Pages](#12-about-and-contact-pages)
+        - [1.3 Language Selection Dropdown Menu](#13-language-selection-dropdown-menu)
+        - [1.4 Shopping Cart Link](#14-shopping-cart-link)
+        - [1.5 Search Bar](#15-search-bar)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -161,15 +167,43 @@ The wireframes for the project can be found [here](docs/wireframes.pdf).
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+For each feature, I have made the commits on a separate branch in order to maintain the stability of the `development` branch.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+#### 1. Navigation
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+I have created a responsive navigation which collapses when viewed on smaller devices such as tablets and phone.
+
+##### 1.1 Categories Dropdown Menu
+
+I have created a dropdown menu for the available categories by iterating through the categories collection and displaying the name.
+
+> Currently the links do not work as I have not implemented the categories page yet.
+
+##### 1.2 About And Contact Pages
+
+I have created links to the `about` and `contact` pages respectively.
+
+> Currently the links do not work as I have not implemented the `about` and `contact` pages yet.
+
+##### 1.3 Language Selection Dropdown Menu
+
+I have created a dropdown menu for the available langauges by iterating through the languages collection and displaying the name.
+
+> Currently the links do not work as I have not implemented the different language versions of the site.
+
+##### 1.4 Shopping Cart Link
+
+I have created a link to the `shopping cart` page which also displays the total quantity of items in the shopping cart collection by iterating through each item and incrementing the `total_items` variable by the quantity amount and returning it to display the number.
+
+> Currently the link does not work as I have not implemented the `shopping cart` page yet.
+
+##### 1.5 Search Bar
+
+I have created a search bar where users are able to search for products which redirect them to the `search results` page when they press enter.
+
+> Currently the lin does not work as I have not implemented the search function or the `search results` page.
 
 ### Features Left to Implement
 - Another feature idea
