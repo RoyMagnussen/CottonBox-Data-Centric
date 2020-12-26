@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -12,15 +12,14 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
 
-# Calls the function below when the route(s) below is visited by the user.
 def get_total_shopping_cart_items() -> int:
     """
     Retrives the total quantity of items in the shopping cart.
-    
+
     Iterates through each item in the shopping cart collection and increments the `total_items` variable by the item quantity amount.
 
     Returns:
-    
+
         int: The total quantity of items in the shopping cart collection.
     """
 
@@ -29,9 +28,25 @@ def get_total_shopping_cart_items() -> int:
         total_items += item["quantity"]
 
     return total_items
+
+
+context = {
+    "categories": list(mongo.db.categories.find()),
+    "languages": list(mongo.db.languages.find()),
+    "total_items": get_total_shopping_cart_items
+}
+
+
 @app.route("/")
-def en_index():
-    return "TEST"
+def en_index() -> render_template:
+    """
+    Renders `index.html` with the provided context when the specified route(s) above are visited by the users.
+
+    Returns:
+
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"]())
 
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
