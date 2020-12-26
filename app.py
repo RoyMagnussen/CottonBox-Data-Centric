@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -46,7 +46,10 @@ def en_index() -> render_template:
 
         render_template: Renders a specified template in the templates folder with the given context.
     """
-    return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"]())
+    if request.method == "GET":
+        callout_closed = request.cookies.get("callout_closed")
+
+        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed)
 
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
