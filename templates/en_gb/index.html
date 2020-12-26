@@ -1,4 +1,27 @@
 {% extends 'en_gb/extends/layout.html' %}
 {% block content %}
-    
+<!-- Callout Section -->
+{% if callout_closed == "True" %}
+<div class="jumbotron jumbotron-fluid alert alert-dismissible text-center pt-3 fade show d-none">
+    <div class="container">
+        <h1 class="display-4 section-heading">COVID-19</h1>
+        <p class="lead">Please rest assured that during these times of uncertainty, we at Cotton Box are still working to bring you the clothing you deserve.</p>
+        <p class="lead">We are following every government guidline and are taking every precaution to not only protect you, but also our staff.</p>
+        <p class="lead">Please take into consideration if you are buying from abroad, that delivery times may take longer than usual due to extra restrictions when shipping internationally.</p>
+        <hr class="my-2">
+        <button class="btn rounded-0 hvr-underline-from-center" id="calloutCloseBtn" data-bs-dismiss="alert">Close</button>
+    </div>
+</div>
+{% else %}
+<div class="jumbotron jumbotron-fluid alert alert-dismissible text-center pt-3 fade show">
+    <div class="container">
+        <h1 class="display-4 section-heading">COVID-19</h1>
+        <p class="lead">Please rest assured that during these times of uncertainty, we at Cotton Box are still working to bring you the clothing you deserve.</p>
+        <p class="lead">We are following every government guidline and are taking every precaution to not only protect you, but also our staff.</p>
+        <p class="lead">Please take into consideration if you are buying from abroad, that delivery times may take longer than usual due to extra restrictions when shipping internationally.</p>
+        <hr class="my-2">
+        <button class="btn rounded-0 hvr-underline-from-center" id="calloutCloseBtn" data-bs-dismiss="alert">Close</button>
+    </div>
+</div>
+{% endif %}
 {% endblock content %}
