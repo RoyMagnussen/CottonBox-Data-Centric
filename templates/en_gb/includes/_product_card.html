@@ -1,0 +1,35 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    <div class="card mt-3 border-0 shadow-sm rounded-0 product-card hvr-grow">
+        <img class="card-img-top product-card-img shadow" src="{{ product.image_url[0] }}" alt="{{ product.name }}">
+        {% if product.on_sale %}
+        <span class="badge mt-1">ON SALE!</span>
+        {% endif %}
+        <div class="card-body">
+            <h6 class="card-title fw-bolder text-supple">{{ product.name }}</h6>
+            {% if product.on_sale %}
+            <p class="card-text text-decoration-line-through">NT${{product.price}}</p>
+            <span class="card-text fw-bold">NT${{ product.sale_price }}</span>
+            {% else %}
+            <p class="card-text">NT${{product.price}}</p>
+            {% endif %}
+            <div class="row text-center">
+                <div class="col-6">
+                    <!-- TODO: Add url_for function for product page -->
+                    <a href="#" class="btn rounded-0 hvr-underline-from-center">View</a>
+                </div>
+                <div class="col-6">
+                    {% if product.stock_quantity == 0 %}
+                    <button type="button" class="btn rounded-0 disabled" data-bs-toggle="modal" data-bs-target="#modal{{product._id}}AddToCart">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                    {% else %}
+                    <button type="button" class="btn rounded-0 hvr-underline-from-center" data-bs-toggle="modal" data-bs-target="#modal{{product._id}}AddToCart">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'en_gb/includes/_add_to_cart_modal.html' %}
