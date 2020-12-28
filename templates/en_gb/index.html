@@ -42,4 +42,13 @@
         {% endfor %}
     </div>
 </div>
+<!-- Categories Section -->
+<div class="container pt-3 mt-5">
+    <h1 class="display-4 section-heading text-center">Categories</h1>
+    <div class="row justify-content-center">
+        {% for category in context.categories %}
+            {% include 'en_gb/includes/_category_card.html' %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

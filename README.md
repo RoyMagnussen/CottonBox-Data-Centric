@@ -42,6 +42,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
         - [3.1 Product Card](#31-product-card)
         - [3.2 Flash Messages](#32-flash-messages)
       - [4. Add To Cart Modal](#4-add-to-cart-modal)
+      - [5. Categories Section](#5-categories-section)
+        - [5.1 Category Card](#51-category-card)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -209,7 +211,7 @@ I have created a link to the `shopping cart` page which also displays the total 
 
 I have created a search bar where users are able to search for products which redirect them to the `search results` page when they press enter.
 
-> Currently the lin does not work as I have not implemented the search function or the `search results` page.
+> Currently the link does not work as I have not implemented the search function or the `search results` page.
 
 #### 2. Callout Section
 
@@ -232,7 +234,8 @@ The product card allows the user to see information about the product such as:
 - An image of the product.
 - The name of the product.
 - The price of the product.
-- A link to the product's page. (Currently not implemented).
+- A link to the product's page.
+> Currently the link does not work as I have not implemented the `product` page.
 - A button to add the product into the shopping cart which opens a modal.
 
 ##### 3.2 Flash Messages
@@ -246,6 +249,20 @@ This modal is opened when the button on the product card to add the product to t
 It asks the user to select the desired colour from the available different colours, the desired size from the available size and the quantity that they would like.
 
 It also contains information such as an image of the product, the name and price of the product in order to reconfirm with the user that this is the correct product.
+
+#### 5. Categories Section
+
+This section allows the user to view all of the available categories that the company has to offer.
+
+##### 5.1 Category Card
+
+The category card allows the user to visually see the products that the card is representing.
+
+It also displays the name of the category to further reassure the user that it is the correct category card.
+
+It also contains a link to the category page where users can view all products of that category.
+
+> Currently the link does not work as I have not implemented the `category` page.
 
 ### Features Left to Implement
 - Another feature idea
