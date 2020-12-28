@@ -38,6 +38,10 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
         - [1.5 Search Bar](#15-search-bar)
       - [2. Callout Section](#2-callout-section)
         - [2.1 Callout Close Button](#21-callout-close-button)
+      - [3. Latest Products Section](#3-latest-products-section)
+        - [3.1 Product Card](#31-product-card)
+        - [3.2 Flash Messages](#32-flash-messages)
+      - [4. Add To Cart Modal](#4-add-to-cart-modal)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -216,6 +220,32 @@ The callout will also remain dismissed once already dismissed and the page is re
 ##### 2.1 Callout Close Button
 
 When this button is clicked by the user, it triggers a jQuery function which sets a cookie. If the page is reloaded, the page will check to see if the cookie has been set, if so then the callout will not be displayed.
+
+#### 3. Latest Products Section
+
+This displays the 6 latest products that the company has to offer, which allows the users quick access to the latest products.
+
+##### 3.1 Product Card
+
+The product card allows the user to see information about the product such as:
+
+- An image of the product.
+- The name of the product.
+- The price of the product.
+- A link to the product's page. (Currently not implemented).
+- A button to add the product into the shopping cart which opens a modal.
+
+##### 3.2 Flash Messages
+
+The flash messages are displayed once the product has been added into the shopping cart. This is to reassure the user that the product has successfully been added into the shopping cart.
+
+#### 4. Add To Cart Modal
+
+This modal is opened when the button on the product card to add the product to the shopping cart has been pressed.
+
+It asks the user to select the desired colour from the available different colours, the desired size from the available size and the quantity that they would like.
+
+It also contains information such as an image of the product, the name and price of the product in order to reconfirm with the user that this is the correct product.
 
 ### Features Left to Implement
 - Another feature idea
