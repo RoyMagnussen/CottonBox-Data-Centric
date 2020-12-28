@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 # Sets the app "MONGO_URI" config variable to the "MONGO_URI" environment variable.
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.secret_key = os.getenv("SECRET_KEY")
 
 # Creates a new PyMongo instance called "mongo" to manage the connection and queries to MongoDB.
 mongo = PyMongo(app)
@@ -33,11 +34,12 @@ def get_total_shopping_cart_items() -> int:
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
-    "total_items": get_total_shopping_cart_items
+    "total_items": get_total_shopping_cart_items,
+    "latest_products": list(mongo.db.products.find().skip(mongo.db.products.estimated_document_count() - 6))
 }
 
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def en_index() -> render_template:
     """
     Renders `index.html` with the provided context when the specified route(s) above are visited by the users.
@@ -46,6 +48,25 @@ def en_index() -> render_template:
 
         render_template: Renders a specified template in the templates folder with the given context.
     """
+    if request.method == "POST":
+        id = request.form["productId"]
+        product = mongo.db.products.find_one({"_id": ObjectId(id)})
+
+        name = product["name"]
+        price = int(product["price"])
+        colour = request.form["productColourRadio"]
+        size = request.form["productSizeRadio"]
+        quantity = int(request.form["productQuantity"])
+        total_price = int(price * quantity)
+
+        mongo.db.shopping_cart.insert_one({"name": name, "price": price,
+                                           "colour": colour, "size": size, "quantity": quantity, "total_price": total_price})
+
+        flash(
+            f"{quantity} x {name} has been successfully added into the shopping cart!")
+
+        return redirect(url_for("en_index"))
+
     if request.method == "GET":
         callout_closed = request.cookies.get("callout_closed")
 

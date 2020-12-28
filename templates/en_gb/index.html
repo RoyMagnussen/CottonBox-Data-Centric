@@ -24,4 +24,22 @@
     </div>
 </div>
 {% endif %}
+<!-- Latest Products Section -->
+<div class="container pt-3">
+    <h1 class="display-4 section-heading text-center">Our Latest Products</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert shadow bg-white text-center text-supple" role="alert">
+        {{ message }}    
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="row justify-content-center">
+        {% for product in context.latest_products %}
+            {% include 'en_gb/includes/_product_card.html' %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

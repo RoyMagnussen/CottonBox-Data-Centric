@@ -22,6 +22,46 @@ body {
     font-family: "Permanent Marker", cursive;
 }
 
+.text-supple {
+    color: #c39e9e !important;
+}
+
+/* ------------------------- Components ------------------------- */
+.product-card {
+    background-color: #f6f0f1;
+    border-radius: 10px !important;
+    height: 500px;
+}
+
+.product-card-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.add-to-cart-modal {
+    background-color: #f6f5f0;
+    border-radius: 10px;
+    border: none !important;
+}
+
+.add-to-cart-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 576px){
+    .add-to-cart-img {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 10px;
+    }
+}
+
 /* ------------------------- Navigation ------------------------- */
 .logo {
     font-family: "Permanent Marker", cursive;
