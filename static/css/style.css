@@ -84,3 +84,9 @@ body {
 .search-bar {
     border-bottom: 1px solid #333 !important;
 }
+
+/* ------------------------- Footer ------------------------- */
+.social-media-icon {
+    font-size: 2rem;
+    color: #fff !important;
+}
