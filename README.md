@@ -44,6 +44,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [4. Add To Cart Modal](#4-add-to-cart-modal)
       - [5. Categories Section](#5-categories-section)
         - [5.1 Category Card](#51-category-card)
+      - [6. Footer](#6-footer)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -263,6 +264,12 @@ It also displays the name of the category to further reassure the user that it i
 It also contains a link to the category page where users can view all products of that category.
 
 > Currently the link does not work as I have not implemented the `category` page.
+
+#### 6. Footer
+
+The footer allows the user to quickly navigate to pages such as the `about`, `contact`, `sitemap` and the `cookie policy` page.
+
+It also provides the user with information to contact the company as well as social media links to the company's pages.
 
 ### Features Left to Implement
 - Another feature idea
