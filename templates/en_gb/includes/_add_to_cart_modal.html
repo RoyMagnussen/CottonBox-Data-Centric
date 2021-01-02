@@ -7,7 +7,7 @@
                         <img class="add-to-cart-img shadow" src="{{ product.image_url[0] }}" alt="{{ product.name }}">
                     </div>
                     <div class="col-12 col-sm-6 p-3">
-                        <form action="" method="post">
+                        <form action="{{ url_for('add_to_cart') }}" method="post">
                             <fieldset>
                                 <input type="text" name="productId" value="{{ product._id }}" class="form-control visually-hidden">
                                 <h4 class="section-heading">{{ product.name }}</h4>

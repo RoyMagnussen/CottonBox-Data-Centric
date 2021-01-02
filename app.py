@@ -105,6 +105,20 @@ def en_index() -> render_template:
     Returns:
         render_template: Renders a specified template in the templates folder with the given context.
     """
+    if request.method == "GET":
+        callout_closed = request.cookies.get("callout_closed")
+
+        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed)
+
+
+@app.route("/add_to_cart/", methods=["GET", "POST"])
+def add_to_cart() -> redirect:
+    """
+    Adds the selected product into the shopping cart with the selected colour, size and quantity options.
+
+    Returns:
+        redirect: Redirects the page to the provided url once the operation has been completed.
+    """
     if request.method == "POST":
         id = request.form["productId"]
         product = mongo.db.products.find_one({"_id": ObjectId(id)})
@@ -122,12 +136,7 @@ def en_index() -> render_template:
         flash(
             f"{quantity} x {name} has been successfully added into the shopping cart!")
 
-        return redirect(url_for("en_index"))
-
-    if request.method == "GET":
-        callout_closed = request.cookies.get("callout_closed")
-
-        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed)
+        return redirect(request.referrer)
 
 
 @app.route("/category/<category_name>/", methods=["GET", "POST"])
