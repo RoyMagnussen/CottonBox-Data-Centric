@@ -55,7 +55,7 @@
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                 {% for message in messages %}
-                <div class="alert shadow bg-white text-center text-supple" role="alert">
+                <div class="alert mt-3 shadow bg-white text-center text-supple" id="flashMessage"role="alert">
                     {{ message }}    
                 </div>
                 {% endfor %}
