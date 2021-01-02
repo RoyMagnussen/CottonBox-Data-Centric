@@ -38,6 +38,16 @@ class FlaskTestCase(unittest.TestCase):
             f"/category/{category_name}/", content_type="text/html")
         self.assertEqual(response.status_code, 200)
 
+    def test_get_product_colours(self, category_name="Tops"):
+        """
+        Checks to see if the `get_product_colours` function returns the correct data type.
+
+        Args:
+            category_name (string): 
+        """
+        result = get_product_colours(category_name)
+        self.assertEqual(type(result), list)
+
 
 if __name__ == "__main__":
     unittest.main()
