@@ -5,8 +5,7 @@
             <h5 class="card-title fw-bolder text-supple text-center">{{ category.name }}</h5>
             <div class="row text-center">
                 <div class="col-12 text-center">
-                    <!-- TODO: Add url_for function for category page -->
-                    <a href="#" class="btn rounded-0 hvr-underline-from-center">View</a>
+                    <a href="{{ url_for('en_category_page', category_name=category.name) }}" class="btn rounded-0 hvr-underline-from-center">View</a>
                 </div>
             </div>
         </div>
