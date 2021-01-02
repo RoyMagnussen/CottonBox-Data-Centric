@@ -25,8 +25,7 @@
                     <ul class="dropdown-menu rounded-0 border-0" aria-labelledby="categoriesDropdownMenu">
                         {% for category in context.categories %}
                         <li class="nav-item">
-                            <!-- TODO: Add url_for function for {{ category.name }} page -->
-                            <a class="dropdown-item nav-link hvr-underline-from-center" href="#">{{ category.name }}</a>
+                            <a class="dropdown-item nav-link hvr-underline-from-center" href="{{ url_for('en_category_page', category_name=category.name) }}">{{ category.name }}</a>
                         </li>
                         {% endfor %}
                     </ul>
