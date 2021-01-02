@@ -1,7 +1,10 @@
 import unittest
+import os
 from app import app
 from app import mongo
-from app import get_total_shopping_cart_items
+from app import get_total_shopping_cart_items, get_product_colours, get_product_prices, get_product_sizes
+
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 
 class FlaskTestCase(unittest.TestCase):
@@ -9,7 +12,6 @@ class FlaskTestCase(unittest.TestCase):
     Test cases for Flask and the application.
 
     Args:
-
         unittest.TestCase (class): The TestCase class from the unittest module.
     """
 
