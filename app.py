@@ -69,6 +69,24 @@ def get_product_sizes(category_name) -> list:
     return size_list
 
 
+def get_product_prices(category_name) -> list:
+    """
+    Gets all of the available prices from the products in the provided category.
+
+    Args:
+        category_name (string): The name of the category.
+
+    Returns:
+        list: A list of all the available prices.
+    """
+    price_list = []
+    for product in list(mongo.db.products.find({"category": category_name})):
+        if product["price"] not in price_list:
+            price_list.append(product["price"])
+
+    return price_list
+
+
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
