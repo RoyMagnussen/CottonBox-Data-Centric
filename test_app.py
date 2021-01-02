@@ -48,6 +48,16 @@ class FlaskTestCase(unittest.TestCase):
         result = get_product_colours(category_name)
         self.assertEqual(type(result), list)
 
+    def test_get_product_sizes(self, category_name="Tops"):
+        """
+        Checks to see if the `get_product_sizes` function returns the correct data type.
+
+        Args:
+            category_name (string): 
+        """
+        result = get_product_sizes(category_name)
+        self.assertEqual(type(result), list)
+
 
 if __name__ == "__main__":
     unittest.main()
