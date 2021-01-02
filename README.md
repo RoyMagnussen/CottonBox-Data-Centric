@@ -48,6 +48,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [7. category Page](#7-category-page)
         - [7.1 Product Filter](#71-product-filter)
     - [Features Left to Implement](#features-left-to-implement)
+      - [1. Products Per Page](#1-products-per-page)
+      - [2. Pagination](#2-pagination)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -284,8 +286,14 @@ The `category` page allows the user to view all available products from the spec
 The product filter allows the user to filter which products they wish to see based on the available colours, sizes and prices of the products.
 
 ### Features Left to Implement
-- Another feature idea
 
+#### 1. Products Per Page
+
+Allows the user to set the amount of items per page they would like to see.
+
+#### 2. Pagination
+
+Creates additional pages based on the number of products per page and allows the user to view all of the products in the category where each page has the correct amount of products displayed.
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
