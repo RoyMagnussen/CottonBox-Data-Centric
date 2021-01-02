@@ -29,6 +29,15 @@ class FlaskTestCase(unittest.TestCase):
         self.assertEqual(type(result), int)
         self.assertEqual(result, 0)
 
+    def test_en_category_page(self, category_name="Tops"):
+        """
+        Checks the status code for the `en_category_page` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get(
+            f"/category/{category_name}/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()
