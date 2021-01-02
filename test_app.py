@@ -1,7 +1,10 @@
 import unittest
+import os
 from app import app
 from app import mongo
-from app import get_total_shopping_cart_items
+from app import get_total_shopping_cart_items, get_product_colours, get_product_prices, get_product_sizes
+
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 
 class FlaskTestCase(unittest.TestCase):
@@ -9,7 +12,6 @@ class FlaskTestCase(unittest.TestCase):
     Test cases for Flask and the application.
 
     Args:
-
         unittest.TestCase (class): The TestCase class from the unittest module.
     """
 
@@ -28,6 +30,45 @@ class FlaskTestCase(unittest.TestCase):
         result = get_total_shopping_cart_items()
         self.assertEqual(type(result), int)
         self.assertEqual(result, 0)
+
+    def test_en_category_page(self, category_name="Tops"):
+        """
+        Checks the status code for the `en_category_page` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get(
+            f"/category/{category_name}/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_product_colours(self, category_name="Tops"):
+        """
+        Checks to see if the `get_product_colours` function returns the correct data type.
+
+        Args:
+            category_name (string): 
+        """
+        result = get_product_colours(category_name)
+        self.assertEqual(type(result), list)
+
+    def test_get_product_sizes(self, category_name="Tops"):
+        """
+        Checks to see if the `get_product_sizes` function returns the correct data type.
+
+        Args:
+            category_name (string): 
+        """
+        result = get_product_sizes(category_name)
+        self.assertEqual(type(result), list)
+
+    def test_get_product_prices(self, category_name="Tops"):
+        """
+        Checks to see if the `get_product_prices` function returns the correct data type.
+
+        Args:
+            category_name (string): 
+        """
+        result = get_product_prices(category_name)
+        self.assertEqual(type(result), list)
 
 
 if __name__ == "__main__":

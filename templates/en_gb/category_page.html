@@ -1,0 +1,71 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+<!-- Product Filter -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-2 bg-powder">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#productFilter" aria-controls="productFilter" aria-expanded="false" aria-label="Toggle product filter">
+                        Filter
+                        <span>
+                            <i class="bi bi-filter"></i>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="productFilter">
+                        <form action="" method="get">
+                            <legend>Filter</legend>
+                            <fieldset>
+                                <div class="form-group pt-3">
+                                    <h5 class="text-supple">Colours:</h5>
+                                    {% for colour in product_colours|sort() %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="colour" id="colour:{{ colour }}" value="{{ colour }}">
+                                        <label class="form-check-label" for="colour:{{ colour }}">{{ colour }}</label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group pt-3">
+                                    <h5 class="text-supple">Sizes:</h5>
+                                    {% for size in product_sizes %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="size" id="size:{{ size }}" value="{{ size }}">
+                                        <label class="form-check-label" for="size:{{ size }}">{{ size }}</label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group pt-3">
+                                    <h5 class="text-supple">Price limit:</h5>
+                                    {% for price in product_prices|sort() %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="price" id="price:{{ price }}" value="{{ price }}">
+                                        <label class="form-check-label" for="price:{{ price }}">NT${{ price }}</label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn fw-bolder rounded-0 hvr-underline-from-center text-center">Apply</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-12 col-lg-10">
+            <div class="row pb-5 px-3 justify-content-center">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert shadow bg-white text-center text-supple" role="alert">
+                    {{ message }}    
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% for product in products %}
+                    {% include 'en_gb/includes/_product_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
