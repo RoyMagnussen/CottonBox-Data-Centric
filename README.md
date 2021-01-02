@@ -45,6 +45,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [5. Categories Section](#5-categories-section)
         - [5.1 Category Card](#51-category-card)
       - [6. Footer](#6-footer)
+      - [7. category Page](#7-category-page)
+        - [7.1 Product Filter](#71-product-filter)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -270,6 +272,16 @@ It also contains a link to the category page where users can view all products o
 The footer allows the user to quickly navigate to pages such as the `about`, `contact`, `sitemap` and the `cookie policy` page.
 
 It also provides the user with information to contact the company as well as social media links to the company's pages.
+
+#### 7. category Page
+
+The `category` page allows the user to view all available products from the specified category.
+
+> Currently the product per page and pagination section of the `category` page are not implemented as there are not enough products in order to warrant the implementation. Once there are more products, then they will be implemented.
+
+##### 7.1 Product Filter
+
+The product filter allows the user to filter which products they wish to see based on the available colours, sizes and prices of the products.
 
 ### Features Left to Implement
 - Another feature idea
