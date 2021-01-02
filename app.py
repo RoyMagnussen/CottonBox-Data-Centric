@@ -31,6 +31,25 @@ def get_total_shopping_cart_items() -> int:
     return total_items
 
 
+def get_product_colours(category_name) -> list:
+    """
+    Gets all of the available colours from the products in the provided category.
+
+    Args:
+        category_name (string): The name of the category.
+
+    Returns:
+        list: A list of all the available colours.
+    """
+    colour_list = []
+    for product in list(mongo.db.products.find({"category": category_name})):
+        for colour in product["colour"]:
+            if colour not in colour_list:
+                colour_list.append(colour)
+
+    return colour_list
+
+
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
