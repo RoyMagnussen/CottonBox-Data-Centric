@@ -26,6 +26,10 @@ body {
     color: #c39e9e !important;
 }
 
+.bg-powder {
+    background-color: #f0e4d8 !important;
+}
+
 /* ------------------------- Components ------------------------- */
 .product-card {
     background-color: #f6f0f1;
