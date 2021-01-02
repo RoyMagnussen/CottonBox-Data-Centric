@@ -50,6 +50,25 @@ def get_product_colours(category_name) -> list:
     return colour_list
 
 
+def get_product_sizes(category_name) -> list:
+    """
+    Gets all of the available sizes from the products in the provided category.
+
+    Args:
+        category_name (string): The name of the category.
+
+    Returns:
+        list: A list of all the available sizes.
+    """
+    size_list = []
+    for product in list(mongo.db.products.find({"category": category_name})):
+        for size in product["size"]:
+            if size not in size_list:
+                size_list.append(size)
+
+    return size_list
+
+
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
