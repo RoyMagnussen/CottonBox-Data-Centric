@@ -47,6 +47,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [6. Footer](#6-footer)
       - [7. category Page](#7-category-page)
         - [7.1 Product Filter](#71-product-filter)
+      - [8. Product Page](#8-product-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
@@ -284,6 +285,12 @@ The `category` page allows the user to view all available products from the spec
 ##### 7.1 Product Filter
 
 The product filter allows the user to filter which products they wish to see based on the available colours, sizes and prices of the products.
+
+#### 8. Product Page
+
+The `product` page allows the user to view all of the details of a particular product such as the name, price, colour, sizes, and the id.
+
+It also allows the user to add the product into the shopping cart by getting them to select the colour, size and quantity they want and then pressing the add to cart button.
 
 ### Features Left to Implement
 

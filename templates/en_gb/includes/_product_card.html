@@ -14,8 +14,7 @@
             {% endif %}
             <div class="row text-center">
                 <div class="col-6">
-                    <!-- TODO: Add url_for function for product page -->
-                    <a href="#" class="btn rounded-0 hvr-underline-from-center">View</a>
+                    <a href="{{ url_for('en_product_page', category_name=product.category, id=product._id) }}" class="btn rounded-0 hvr-underline-from-center">View</a>
                 </div>
                 <div class="col-6">
                     {% if product.stock_quantity == 0 %}
