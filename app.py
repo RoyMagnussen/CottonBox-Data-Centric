@@ -120,7 +120,7 @@ def add_to_cart() -> redirect:
         redirect: Redirects the page to the provided url once the operation has been completed.
     """
     if request.method == "POST":
-        id = request.form["productId"]
+        id = request.form.get("productId")
         product = mongo.db.products.find_one({"_id": ObjectId(id)})
 
         name = product["name"]
