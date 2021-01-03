@@ -1,0 +1,30 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+    <!-- Who are we -->
+    <div class="container py-3">
+        <h1 class="display-4 text-center section-heading">Who are we?</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="company-member-card p-3 shadow-sm">
+                    <div class="row">
+                        <!-- Company member image -->
+                        <div class="col-12 col-md-6">
+                            <img src="{{ url_for('static', filename='images/profile_pictures/founder-image.jpg') }}" alt="Company founder image" class="rounded-circle profile-picture img-thumbnail img-fluid">
+                        </div>
+                        <!-- Company member info -->
+                        <div class="col-12 col-md-6">
+                            <h3 class="section-heading">Ema, Founder of Cotton Box</h3>
+                            <p class="lead">
+                                Hey there! I'm Ema, as is says above. I want to thank you for visiting our website today.
+                                It has been a long time dream of mine to have my own clothing website, and now it is a reality,
+                                all thanks to you: my loyal customers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- What do we do-->
+    <!-- Where to find us -->
+{% endblock content %}
