@@ -196,6 +196,13 @@ def en_category_page(category_name) -> render_template:
                            product_sizes=sizes, product_prices=prices)
 
 
+@app.route("/category/<category_name>/<string:id>/", methods=["GET", "POST"])
+def en_product_page(category_name, id) -> render_template:
+    product = mongo.db.products.find_one({"_id": ObjectId(id)})
+
+    return render_template("en_gb/product_page.html", title=product["name"], context=context, total_items=context["total_items"](), product=product)
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
