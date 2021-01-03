@@ -1,0 +1,110 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+<div class="container py-3">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert shadow bg-white text-center text-supple" id="flashMessage" role="alert">
+        {{ message }}    
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="row">
+        <!-- Product Images -->
+        <div class="col-12 col-md-6 p-0">
+            <div class="row h-100">
+                <!-- Image Thumbnails -->
+                <div class="col-md-4 d-none d-md-block d-flex thumbnail-container">
+                    {% for url in product.image_url %}
+                    <img src="{{ url }}" alt="{{ product.name }}" class="img-fluid product-page-thumbnail">
+                    {% endfor %}
+                </div>
+                <div class="col-12 col-md-8">
+                    <!-- Image Carousel -->
+                    <div id="productImage" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for url in product.image_url %}
+                                {% if url == product.image_url[0] %}
+                                <div class="carousel-item active">
+                                    <img src="{{ url }}" class="product-page-img" alt="{{ product.name }}">
+                                </div>
+                                {% else %}
+                                <div class="carousel-item">
+                                    <img src="{{ url }}" class="product-page-img" alt="{{ product.name }}">
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% if product.image_url|length == 1 %}
+                        <a class="carousel-control-prev d-none" href="#productImage" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next d-none" href="#productImage" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                        {% else %}
+                        <a class="carousel-control-prev" href="#productImage" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#productImage" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Information -->
+        <div class="col-12 col-md-6 product-info shadow ps-5">
+            <div class="py-md-0 py-3">
+                <h1 class="display-4 section-heading">{{ product.name }}</h1>
+                {% if product.on_sale %}
+                <p class="lead text-decoration-line-through">NT${{ product.price }}</p>
+                <span class="lead fw-bold">NT${{ product.sale_price }}</span>                   
+                {% else %}
+                <p class="lead mt-4">NT${{ product.price }}</p>
+                {% endif %}
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <fieldset>
+                        <div class="form-group pt-3">
+                            <h5 class="text-supple">Colours:</h5>
+                            {% for colour in product.colour %}
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="productColourRadio" id="productColour:{{ colour }}" value="{{ colour }}" required>
+                                <label class="form-check-label" for="productColour:{{ colour }}">{{ colour }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group pt-3">
+                            <h5 class="text-supple">Sizes:</h5>
+                            {% for size in product.size %}
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="productSizeRadio" id="productSize:{{ size }}" value="{{ size }}" required>
+                                <label class="form-check-label" for="productSize:{{ size }}">{{ size }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group pt-3">
+                            <h5 class="text-supple">Quantity:</h5>
+                            <div class="input-group mb-3 w-25">
+                                <input type="number" class="form-control" min="1" max="{{ product.stock_quantity }}" step="1" value="1" name="productQuantity" required>
+                            </div>
+                        </div>
+                        <input type="text" name="productId" value="{{ product._id }}" class="form-control visually-hidden">
+                    </fieldset>
+                    <hr>
+                    <button type="submit" class="btn fw-bolder rounded-0 hvr-underline-from-center">
+                        Add
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
