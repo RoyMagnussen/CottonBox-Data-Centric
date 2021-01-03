@@ -203,6 +203,11 @@ def en_product_page(category_name, id) -> render_template:
     return render_template("en_gb/product_page.html", title=product["name"], context=context, total_items=context["total_items"](), product=product)
 
 
+@app.route("/about/")
+def en_about_page():
+    return render_template("en_gb/about_page.html", title="About Us", context=context, total_items=context["total_items"]())
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
