@@ -69,7 +69,7 @@ class FlaskTestCase(unittest.TestCase):
         """
         result = get_product_prices(category_name)
         self.assertEqual(type(result), list)
-        
+
     def test_en_product_page(self, category_name="Tops", id="5f37c2e63fc62b5c98af009d"):
         """
         Checks the status code for the `en_product_page` route function to see if it exists.
@@ -78,6 +78,15 @@ class FlaskTestCase(unittest.TestCase):
         response = tester.get(
             f"/category/{category_name}/{id}/", content_type="text/html")
         self.assertEqual(response.status_code, 200)
+
+    def test_en_about_page(self):
+        """
+        Checks the status code for the `en_about_page` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get("/about/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()
