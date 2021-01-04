@@ -205,6 +205,7 @@ def en_product_page(category_name, id) -> render_template:
 
 @app.route("/about/")
 def en_about_page():
+    context["map_api_key"] = os.getenv("MAP_API_KEY")
     return render_template("en_gb/about_page.html", title="About Us", context=context, total_items=context["total_items"]())
 
 
