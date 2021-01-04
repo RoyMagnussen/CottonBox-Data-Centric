@@ -93,6 +93,16 @@ body {
     object-fit: cover;
 }
 
+.company-member-card {
+    background-color: #f6f0f1;
+    border-radius: 10px;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+}
+
 /* ------------------------- Navigation ------------------------- */
 .logo {
     font-family: "Permanent Marker", cursive;
@@ -121,4 +131,10 @@ body {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
     }
+}
+
+/* ------------------------- About Page ------------------------- */
+.map {
+    height: 500px;
+    border-radius: 10px;
 }
