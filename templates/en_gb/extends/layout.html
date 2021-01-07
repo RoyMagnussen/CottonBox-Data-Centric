@@ -27,6 +27,9 @@
         {% if title == "About Us" %}
         <script src="http://maps.googleapis.com/maps/api/js?key={{ context.map_api_key }}&callback=initMap&libraries=&v=weekly" defer></script>
         {% endif %}
+        {% if title == "Contact Us" %}
+        <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        {% endif %}
         <!-- Custom Scripts -->
         <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     </body>
