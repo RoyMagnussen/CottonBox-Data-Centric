@@ -87,6 +87,14 @@ class FlaskTestCase(unittest.TestCase):
         response = tester.get("/about/", content_type="text/html")
         self.assertEqual(response.status_code, 200)
 
+    def test_en_contact_page(self):
+        """
+        Checks the status code for the `en_contact_page` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get("/contact/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()

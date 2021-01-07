@@ -50,6 +50,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [8. Product Page](#8-product-page)
       - [9. About Page](#9-about-page)
         - [9.1 Map](#91-map)
+      - [10. Contact Page](#10-contact-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
@@ -303,6 +304,10 @@ The `about` page allows user to find out more inforation about the company that 
 This is a map generated from the google maps api.
 
 It shows the location of where the company is located, so that users may be able to contact the company.
+
+#### 10. Contact Page
+
+The contact page allows the user to send a message to the company about any issues or queries that they may have by getting them to fill in each of the fields and pressing the send button.
 
 ### Features Left to Implement
 

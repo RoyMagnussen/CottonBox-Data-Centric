@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from forms import EnContactForm
 
 # Creates a new Flask application instance called "app".
 app = Flask(__name__)
@@ -198,15 +199,50 @@ def en_category_page(category_name) -> render_template:
 
 @app.route("/category/<category_name>/<string:id>/", methods=["GET", "POST"])
 def en_product_page(category_name, id) -> render_template:
+    """
+    Renders `product_page.html` with the specified product using the Id provided.
+
+    Args:
+        category_name (string): The name of the category the product belongs to.
+        id (string): The Id of the product.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
     product = mongo.db.products.find_one({"_id": ObjectId(id)})
 
     return render_template("en_gb/product_page.html", title=product["name"], context=context, total_items=context["total_items"](), product=product)
 
 
 @app.route("/about/")
-def en_about_page():
+def en_about_page() -> render_template:
+    """
+    Renders `about.html`when the specified url(s) above are visited by the user.
+
+    Returns:
+        render_template: RRenders a specified template in the templates folder with the given context.
+    """
     context["map_api_key"] = os.getenv("MAP_API_KEY")
     return render_template("en_gb/about_page.html", title="About Us", context=context, total_items=context["total_items"]())
+
+
+@app.route("/contact/", methods=["GET", "POST"])
+def en_contact_us() -> render_template:
+    """
+    Renders `contact_page.html` when the specified url(s) above are visited by the user.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    form = EnContactForm()
+    
+    if request.method == "POST":
+        context["email_sent"] = True
+        flash("Thank you for contacting us. Your message has been sent and someone should contact you soon!")
+        return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
+
+    
+    return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
 
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
