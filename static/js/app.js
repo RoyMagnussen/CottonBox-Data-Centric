@@ -25,3 +25,11 @@ function initMap() {
         map: map,
     });
 }
+
+(function () {
+    emailjs.init("user_OFYhUA5JRmSJ85n6gKi0l");
+
+    emailjs.sendForm("gmail", "default_template", "#emailForm");
+
+
+})();
