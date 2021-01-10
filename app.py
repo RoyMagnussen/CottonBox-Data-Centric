@@ -29,7 +29,7 @@ def get_total_shopping_cart_items() -> int:
 
     total_items = 0
     for item in list(mongo.db.shopping_cart.find()):
-        total_items += item["quantity"]
+        total_items += int(item["quantity"])
 
     return total_items
 
@@ -90,6 +90,14 @@ def get_product_prices(category_name) -> list:
     return price_list
 
 
+def get_grand_total():
+    grand_total = 0
+    for product in list(mongo.db.shopping_cart.find()):
+        grand_total += product["total_price"]
+
+    return grand_total
+
+
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
@@ -126,12 +134,13 @@ def add_to_cart() -> redirect:
 
         name = product["name"]
         price = int(product["price"])
+        image_url = product["image_url"]
         colour = request.form["productColourRadio"]
         size = request.form["productSizeRadio"]
         quantity = int(request.form["productQuantity"])
         total_price = int(price * quantity)
 
-        mongo.db.shopping_cart.insert_one({"name": name, "price": price,
+        mongo.db.shopping_cart.insert_one({"name": name, "price": price, "id": id, "image_url": image_url,
                                            "colour": colour, "size": size, "quantity": quantity, "total_price": total_price})
 
         flash(
@@ -235,13 +244,12 @@ def en_contact_us() -> render_template:
         render_template: Renders a specified template in the templates folder with the given context.
     """
     form = EnContactForm()
-    
+
     if request.method == "POST":
         context["email_sent"] = True
         flash("Thank you for contacting us. Your message has been sent and someone should contact you soon!")
         return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
 
-    
     return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
 
 
