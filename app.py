@@ -261,6 +261,42 @@ def en_shopping_cart() -> render_template:
     return render_template("en_gb/shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), products=products)
 
 
+@app.route("/cart/edit/<id>", methods=["GET", "POST"])
+def en_edit_shopping_cart(id) -> render_template:
+    """
+    Renders `edit_shopping_cart.html` when the specified url(s) above are visited by the user.
+
+    Retrieves the selected product from the shopping_cart collection as well as the product from the products collection.
+
+    Updates the shopping_cart collection product's details from the form generated from the products collection product's details.
+
+    Args:
+        id (string): The unique id created by MongoDB.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    context["grand_total"] = get_grand_total
+    context["edit_products"] = True
+
+    shopping_cart_product = mongo.db.shopping_cart.find_one({"id": id})
+    selected_product = mongo.db.products.find_one({"_id": ObjectId(id)})
+
+    if request.method == "POST":
+        colour = request.form["productColourRadio"]
+        size = request.form["productSizeRadio"]
+        quantity = int(request.form.get("productQuantity"))
+
+        product_id = request.form["productId"]
+
+        mongo.db.shopping_cart.update_one({"_id": ObjectId(product_id)}, {
+                                          "$set": {"colour": colour, "size": size, "quantity": quantity}})
+
+        return redirect(url_for('en_shopping_cart'))
+
+    return render_template("en_gb/edit_shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), shopping_cart_product=shopping_cart_product, selected_product=selected_product)
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
