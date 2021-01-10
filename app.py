@@ -245,6 +245,22 @@ def en_contact_us() -> render_template:
     return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
 
 
+@app.route("/cart/", methods=["GET", "POST"])
+def en_shopping_cart() -> render_template:
+    """
+    Renders `shopping_cart.html` when the specified url(s) above are visited by the user.
+
+    Displays all of the products in the shopping cart collection.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    products = list(mongo.db.shopping_cart.find())
+    context["grand_total"] = get_grand_total
+
+    return render_template("en_gb/shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), products=products)
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
