@@ -1,0 +1,19 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+<div class="container-fluid vh-100">
+    <div class="row">
+        <!-- Product Display Area -->
+        <div class="col-12 col-md-8">
+            <h1 class="display-4 section-heading">Shopping Cart ({{ total_items }})</h1>
+            <div class="row my-3">
+                {% include 'en_gb/includes/_edit_shopping_cart_product_card.html' %}
+            </div>
+        </div>
+        <!-- Checkout Section -->
+        <div class="col-12 col-md-4">
+            <h1 class="display-4 section-heading">Grand Total</h1>
+            <h2 class="my-3">NT${{ grand_total }}</h2>
+        </div>
+    </div>
+</div>
+{% endblock content %}

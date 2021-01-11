@@ -1,0 +1,50 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Product Display Area -->
+        <div class="col-12 col-md-8">
+            <h1 class="display-4 section-heading">Shopping Cart ({{ total_items }})</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert shadow bg-white text-center text-supple" id="flashMessage" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="row my-3 vh-100">
+                {% for product in products %}
+                {% include 'en_gb/includes/_shopping_cart_product_card.html' %}
+                {% include 'en_gb/includes/_remove_from_cart_modal.html' %}
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Checkout Section -->
+        <div class="col-12 col-md-4">
+            <h1 class="display-4 section-heading">Grand Total</h1>
+            <h2 class="my-3">NT${{ grand_total }}</h2>
+            <div class="row d-flex align-items-center my-5">
+                <div class="col-12 d-grid gap-2">
+                    {% if products|length == 0 %}
+                    <!-- TODO: Add url_for function for checkout page -->
+                    <a class="btn disabled rounded-0 hvr-underline-from-center" href="#">
+                        Checkout
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    {% else %}
+                    <!-- TODO: Add url_for function for checkout page -->
+                    <a class="btn rounded-0 hvr-underline-from-center" href="#">
+                        Checkout
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    {% endif %}
+                    <a class="btn rounded-0 hvr-underline-from-center" href="{{ url_for('en_index') }}">Continue
+                        Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

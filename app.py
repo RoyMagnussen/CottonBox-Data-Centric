@@ -29,7 +29,7 @@ def get_total_shopping_cart_items() -> int:
 
     total_items = 0
     for item in list(mongo.db.shopping_cart.find()):
-        total_items += item["quantity"]
+        total_items += int(item["quantity"])
 
     return total_items
 
@@ -90,6 +90,14 @@ def get_product_prices(category_name) -> list:
     return price_list
 
 
+def get_grand_total():
+    grand_total = 0
+    for product in list(mongo.db.shopping_cart.find()):
+        grand_total += product["total_price"]
+
+    return grand_total
+
+
 context = {
     "categories": list(mongo.db.categories.find()),
     "languages": list(mongo.db.languages.find()),
@@ -126,18 +134,34 @@ def add_to_cart() -> redirect:
 
         name = product["name"]
         price = int(product["price"])
+        image_url = product["image_url"]
         colour = request.form["productColourRadio"]
         size = request.form["productSizeRadio"]
         quantity = int(request.form["productQuantity"])
         total_price = int(price * quantity)
 
-        mongo.db.shopping_cart.insert_one({"name": name, "price": price,
+        mongo.db.shopping_cart.insert_one({"name": name, "price": price, "id": id, "image_url": image_url,
                                            "colour": colour, "size": size, "quantity": quantity, "total_price": total_price})
 
         flash(
             f"{quantity} x {name} has been successfully added into the shopping cart!")
 
         return redirect(request.referrer)
+
+
+@app.route("/remove_from_cart/", methods=["GET", "POST"])
+def remove_from_cart() -> redirect:
+    """
+    Removes the selected product from the shopping_cart collection.
+
+    Returns:
+        redirect: Redirects the page to the provided url once the operation has been completed.
+    """
+    if request.method == "POST":
+        product_id = request.form.get("productId")
+        mongo.db.shopping_cart.delete_one({"_id": ObjectId(product_id)})
+        flash("The product was successfully removed from the shopping cart!")
+        return redirect(url_for('en_shopping_cart'))
 
 
 @app.route("/category/<category_name>/", methods=["GET", "POST"])
@@ -235,14 +259,65 @@ def en_contact_us() -> render_template:
         render_template: Renders a specified template in the templates folder with the given context.
     """
     form = EnContactForm()
-    
+
     if request.method == "POST":
         context["email_sent"] = True
         flash("Thank you for contacting us. Your message has been sent and someone should contact you soon!")
         return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
 
-    
     return render_template("en_gb/contact_page.html", title="Contact Us", context=context, total_items=context["total_items"](), form=form)
+
+
+@app.route("/cart/", methods=["GET", "POST"])
+def en_shopping_cart() -> render_template:
+    """
+    Renders `shopping_cart.html` when the specified url(s) above are visited by the user.
+
+    Displays all of the products in the shopping cart collection.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    products = list(mongo.db.shopping_cart.find())
+    context["grand_total"] = get_grand_total
+
+    return render_template("en_gb/shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), products=products)
+
+
+@app.route("/cart/edit/<id>", methods=["GET", "POST"])
+def en_edit_shopping_cart(id) -> render_template:
+    """
+    Renders `edit_shopping_cart.html` when the specified url(s) above are visited by the user.
+
+    Retrieves the selected product from the shopping_cart collection as well as the product from the products collection.
+
+    Updates the shopping_cart collection product's details from the form generated from the products collection product's details.
+
+    Args:
+        id (string): The unique id created by MongoDB.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    context["grand_total"] = get_grand_total
+    context["edit_products"] = True
+
+    shopping_cart_product = mongo.db.shopping_cart.find_one({"id": id})
+    selected_product = mongo.db.products.find_one({"_id": ObjectId(id)})
+
+    if request.method == "POST":
+        colour = request.form["productColourRadio"]
+        size = request.form["productSizeRadio"]
+        quantity = int(request.form.get("productQuantity"))
+
+        product_id = request.form["productId"]
+
+        mongo.db.shopping_cart.update_one({"_id": ObjectId(product_id)}, {
+                                          "$set": {"colour": colour, "size": size, "quantity": quantity}})
+
+        return redirect(url_for('en_shopping_cart'))
+
+    return render_template("en_gb/edit_shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), shopping_cart_product=shopping_cart_product, selected_product=selected_product)
 
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.

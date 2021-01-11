@@ -1,0 +1,18 @@
+<div class="modal fade" id="modal{{product._id}}RemoveFromCart" tabindex="-1" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <form action="{{ url_for('remove_from_cart') }}" method="post">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="lead">Are you sure you want to remove the product from the shopping cart?</p>
+                    <p class="lead">This operation cannot be undone.</p>
+                    <input type="hidden" name="productId" value="{{ product._id }}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn rounded-0 hvr-underline-from-center" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn rounded-0 hvr-underline-from-center">Remove <i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

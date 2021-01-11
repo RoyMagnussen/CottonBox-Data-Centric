@@ -138,3 +138,21 @@ body {
     height: 500px;
     border-radius: 10px;
 }
+
+/* ------------------------- Shopping Cart Page ------------------------- */
+.shopping-cart-card {
+    height: auto;
+    background-color: #f6f0f1;
+}
+
+.shopping-cart-product-card-img {
+    height: 275px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .shopping-cart-card {
+        height: 615px;
+    }
+}
