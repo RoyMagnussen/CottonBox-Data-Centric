@@ -1,0 +1,69 @@
+<div class="col-12 col-md-6 col-lg-12 my-2">
+    <div class="card shopping-cart-card shadow-sm border-0">
+        <div class="row">
+            <div class="col-12 col-lg-2">
+                <img src="{{ selected_product.image_url[0] }}" alt="{{ selected_product.name }}"
+                    class="img-fluid shopping-cart-product-card-img">
+            </div>
+            <div class="col-12 col-lg-10">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" method="POST">
+                                <div class="row">
+                                    <div class="col-12 col-lg-9">
+                                        <h5 class="card-title section-heading">{{ selected_product.name }}</h5>
+                                        <p class="lead">NT${{ selected_product.price }}</p>
+                                        <div class="form-group pt-2">
+                                            <label class="card-text">Colours:</label>
+                                            {% for colour in selected_product.colour %}
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="productColourRadio"
+                                                    id="productColour:{{ colour }}" value="{{ colour }}" required>
+                                                <label class="form-check-label"
+                                                    for="productColour:{{ colour }}">{{ colour }}</label>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="form-group pt-2">
+                                            <label class="card-text">Sizes:</label>
+                                            {% for size in selected_product.size %}
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="productSizeRadio"
+                                                    id="productSize:{{ size }}" value="{{ size }}" required>
+                                                <label class="form-check-label" for="productSize:{{ size }}">{{ size }}</label>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="form-group pt-2 w-50">
+                                            <label class="card-text">Qty:</label>
+                                            <div class="input-group mb-3">
+                                                <input type="number" class="form-control" min="1"
+                                                    max="{{ selected_product.stock_quantity }}" step="1" value="{{ shopping_cart_product.quantity }}"
+                                                    name="productQuantity" required>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">{{ selected_product.id }}</small>
+                                    </div>
+                                    <div class="col-12 col-lg-3 d-flex align-items-center">
+                                        <div class="d-grid gap-2 mx-auto">
+                                            <input type="hidden" name="id" value="{{ selected_product.id }}">
+                                            <input type="hidden" name="productId" value="{{ shopping_cart_product._id }}">
+                                            <button type="submit" class="btn rounded-0 hvr-underline-from-center">
+                                                Save
+                                                <i class="bi bi-check"></i>
+                                            </button>
+                                            <a href="{{ url_for('en_shopping_cart') }}" class="btn rounded-0 hvr-underline-from-center">
+                                                Cancel
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
