@@ -149,6 +149,21 @@ def add_to_cart() -> redirect:
         return redirect(request.referrer)
 
 
+@app.route("/remove_from_cart/", methods=["GET", "POST"])
+def remove_from_cart() -> redirect:
+    """
+    Removes the selected product from the shopping_cart collection.
+
+    Returns:
+        redirect: Redirects the page to the provided url once the operation has been completed.
+    """
+    if request.method == "POST":
+        product_id = request.form.get("productId")
+        mongo.db.shopping_cart.delete_one({"_id": ObjectId(product_id)})
+        flash("The product was successfully removed from the shopping cart!")
+        return redirect(url_for('en_shopping_cart'))
+
+
 @app.route("/category/<category_name>/", methods=["GET", "POST"])
 def en_category_page(category_name) -> render_template:
     """
