@@ -116,8 +116,9 @@ def en_index() -> render_template:
     """
     if request.method == "GET":
         callout_closed = request.cookies.get("callout_closed")
+        cookies_accepted = request.cookies.get("cottonbox_accept")
 
-        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed)
+        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed, cookies_accepted=cookies_accepted)
 
 
 @app.route("/add_to_cart/", methods=["GET", "POST"])
