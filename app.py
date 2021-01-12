@@ -331,6 +331,17 @@ def en_sitemap() -> render_template:
     return render_template("en_gb/sitemap.html", title="Sitemap", context=context, total_items=context["total_items"]())
 
 
+@app.route("/cookie_policy/")
+def cookie_policy_page() -> render_template:
+    """
+    Renders `cookie_policy.html` when the specified url(s) above are visited by the user.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    return render_template("en_gb/cookie_policy.html", title="Cookie Policy", context=context, total_items=context["total_items"]())
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
