@@ -320,6 +320,17 @@ def en_edit_shopping_cart(id) -> render_template:
     return render_template("en_gb/edit_shopping_cart.html", title="Shopping Cart", context=context, total_items=context["total_items"](), grand_total=context["grand_total"](), shopping_cart_product=shopping_cart_product, selected_product=selected_product)
 
 
+@app.route("/sitemap/")
+def en_sitemap() -> render_template:
+    """
+    Renders `sitemap.html` when the specified url(s) above are vistied by the user.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    return render_template("en_gb/sitemap.html", title="Sitemap", context=context, total_items=context["total_items"]())
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
