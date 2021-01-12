@@ -5,14 +5,16 @@
                 <h1 class="section-heading text-white">Information</h1>
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a href="{{ url_for('en_about_page') }}" class="nav-link text-white hvr-underline-from-center">About Us</a>
+                        <a href="{{ url_for('en_about_page') }}"
+                            class="nav-link text-white hvr-underline-from-center">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('en_contact_us') }}" class="nav-link text-white hvr-underline-from-center">Contact Us</a>
+                        <a href="{{ url_for('en_contact_us') }}"
+                            class="nav-link text-white hvr-underline-from-center">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <!-- TODO: Add url_for function for sitemap page -->
-                        <a href="#" class="nav-link text-white hvr-underline-from-center">Sitemap</a>
+                        <a href="{{ url_for('en_sitemap') }}"
+                            class="nav-link text-white hvr-underline-from-center">Sitemap</a>
                     </li>
                     <li class="nav-item">
                         <!-- TODO: Add url_for function for cookie policy page -->
@@ -69,6 +71,6 @@
             </div>
         </div>
         <hr>
-        <p class="text-muted m-0">&copy; Cotton Box | Design by Roy Magnussen</p>
+        <p class="text-muted m-0 pb-3">&copy; Cotton Box | Design by Roy Magnussen</p>
     </div>
 </footer>
