@@ -52,6 +52,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
         - [9.1 Map](#91-map)
       - [10. Contact Page](#10-contact-page)
       - [11. Shopping Cart Page](#11-shopping-cart-page)
+      - [12. Sitemap Page](#12-sitemap-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
@@ -308,6 +309,10 @@ The Shopping cart page allows the user to view all of the products that have bee
 Here they are able to edit the product by clicking the edit button where they can change the colour, size and the quantity of the product.
 
 They can also remove the product from the shopping list by clicking the remove button, when they do a modal will appear asking the user to confirm that they want to remove it.
+
+#### 12. Sitemap Page
+
+The sitemap page allows the user to view all of the links on the website on one page allowing them to find and navigate tot he page that they want quickly.
 
 ### Features Left to Implement
 

@@ -1,0 +1,32 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h1 class="display-4 section-heading">Home</h1>
+            <a href="{{ url_for('en_index') }}" class="nav-link">Home</a>
+            <h1 class="display-4 section-heading">Categories</h1>
+            {% for category in context.categories %}
+            <a href="{{ url_for('en_category_page', category_name=category.name) }}"
+                class="nav-link">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+        <div class="col-12 col-md-6">
+            <h1 class="display-4 section-heading">Information</h1>
+            <a href="{{ url_for('en_about_page') }}" class="nav-link">About Us</a>
+            <a href="{{ url_for('en_contact_us') }}" class="nav-link">Contact Us</a>
+            <a href="{{ url_for('en_sitemap') }}" class="nav-link">Sitemap (this page)</a>
+            <!-- TODO: Add url_for function for cookie policy page -->
+            <a href="#" class="nav-link">Cookie Policy</a>
+            <a href="{{ url_for('en_shopping_cart') }}" class="nav-link">Shopping Cart</a>
+            <h1 class="display-4 section-heading">Social Media</h1>
+            <!-- TODO: Add link to facebook page. -->
+            <a href="#" class="nav-link">Facebook</a>
+            <!-- TODO: Add link to instagram page. -->
+            <a href="#" class="nav-link">Instagram</a>
+            <!-- TODO: Add link to line page. -->
+            <a href="#" class="nav-link">Line</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
