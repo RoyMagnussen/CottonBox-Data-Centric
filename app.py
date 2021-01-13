@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from forms import EnContactForm
+from forms import EnContactForm, CheckoutForm
 
 # Creates a new Flask application instance called "app".
 app = Flask(__name__)
@@ -310,11 +310,12 @@ def en_edit_shopping_cart(id) -> render_template:
         colour = request.form["productColourRadio"]
         size = request.form["productSizeRadio"]
         quantity = int(request.form.get("productQuantity"))
+        total_price = selected_product["price"] * quantity
 
         product_id = request.form["productId"]
 
         mongo.db.shopping_cart.update_one({"_id": ObjectId(product_id)}, {
-                                          "$set": {"colour": colour, "size": size, "quantity": quantity}})
+                                          "$set": {"colour": colour, "size": size, "quantity": quantity, "total_price": total_price}})
 
         return redirect(url_for('en_shopping_cart'))
 
