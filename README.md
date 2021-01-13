@@ -333,7 +333,6 @@ This page notifies the user of the following:
 #### 15. Checkout Page
 
 The checkout page allows the user to purchase the products in the shoppping cart by getting them to fill out the form with their details and the address of where they would like the products to be delivered to.
-
 ### Features Left to Implement
 
 #### 1. Products Per Page
