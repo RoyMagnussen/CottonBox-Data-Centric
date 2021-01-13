@@ -53,6 +53,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [10. Contact Page](#10-contact-page)
       - [11. Shopping Cart Page](#11-shopping-cart-page)
       - [12. Sitemap Page](#12-sitemap-page)
+      - [13. Cookie Consent Banner](#13-cookie-consent-banner)
+      - [14. Cookie Policy Page](#14-cookie-policy-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
@@ -313,6 +315,19 @@ They can also remove the product from the shopping list by clicking the remove b
 #### 12. Sitemap Page
 
 The sitemap page allows the user to view all of the links on the website on one page allowing them to find and navigate tot he page that they want quickly.
+
+#### 13. Cookie Consent Banner
+
+This allows the users of the site to grant permission to the site to create and store cookies on their device by the user clicking the accept button.
+
+#### 14. Cookie Policy Page
+
+This page notifies the user of the following:
+
+- What a cookie is.
+- How the website uses cookies.
+- What cookies the website creates and stores.
+- How to remove and manage cookies.
 
 ### Features Left to Implement
 
