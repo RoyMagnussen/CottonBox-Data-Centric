@@ -103,6 +103,17 @@ body {
     height: 200px;
 }
 
+#cookieConsentBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity;
+}
+
 /* ------------------------- Navigation ------------------------- */
 .logo {
     font-family: "Permanent Marker", cursive;

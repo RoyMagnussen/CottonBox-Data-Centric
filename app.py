@@ -116,8 +116,9 @@ def en_index() -> render_template:
     """
     if request.method == "GET":
         callout_closed = request.cookies.get("callout_closed")
+        cookies_accepted = request.cookies.get("cottonbox_accept")
 
-        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed)
+        return render_template("en_gb/index.html", title="Home", context=context, total_items=context["total_items"](), callout_closed=callout_closed, cookies_accepted=cookies_accepted)
 
 
 @app.route("/add_to_cart/", methods=["GET", "POST"])
@@ -329,6 +330,17 @@ def en_sitemap() -> render_template:
         render_template: Renders a specified template in the templates folder with the given context.
     """
     return render_template("en_gb/sitemap.html", title="Sitemap", context=context, total_items=context["total_items"]())
+
+
+@app.route("/cookie_policy/")
+def cookie_policy_page() -> render_template:
+    """
+    Renders `cookie_policy.html` when the specified url(s) above are visited by the user.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    return render_template("en_gb/cookie_policy.html", title="Cookie Policy", context=context, total_items=context["total_items"]())
 
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.

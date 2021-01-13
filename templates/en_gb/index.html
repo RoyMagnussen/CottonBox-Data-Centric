@@ -51,4 +51,17 @@
         {% endfor %}
     </div>
 </div>
+{% if cookies_accepted != "True" %}
+<div class="cookie-consent-banner" id="cookieConsentBanner">
+    <p>Cotton Box uses cookies to create a better user experience. By clicking accept or continuing to use the site, you argree to the creation and storage of cookies.</p>
+    <p>If you would like to find out more, head hover to our <a href="{{ url_for('cookie_policy_page') }}">cookie policy</a> page.</p>
+    <button class="btn btn-outline-secondary rounded-0" id="cookieAcceptBtn">Accept</button>
+</div>
+{% else %}
+<div class="cookie-consent-banner d-none" id="cookieConsentBanner">
+    <p>Cotton Box uses cookies to create a better user experience. By clicking accept or continuing to use the site, you argree to the creation and storage of cookies.</p>
+    <p>If you would like to find out more, head hover to our <a href="{{ url_for('cookie_policy_page') }}">cookie policy</a> page.</p>
+    <button class="btn btn-outline-secondary rounded-0" id="cookieAcceptBtn">Accept</button>
+</div>
+{% endif %}
 {% endblock content %}
