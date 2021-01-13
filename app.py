@@ -344,6 +344,29 @@ def cookie_policy_page() -> render_template:
     return render_template("en_gb/cookie_policy.html", title="Cookie Policy", context=context, total_items=context["total_items"]())
 
 
+@app.route("/checkout/")
+def checkout() -> render_template:
+    """
+    Renders `checkout.html` when the specified url(s) above are visited by the user.
+
+    Descreases the stock_quantity amount for each product in the products collection that is in the shopping_cart collection by the quntity amount.
+
+    Returns:
+        render_template: Renders a specified template in the templates folder with the given context.
+    """
+    form = CheckoutForm()
+    if request.method == "POST":
+        for product in list(mongo.db.shopping_cart.find()):
+            mongo.db.products.find_one_and_update({"_id": ObjectId(product.id)}, {
+                                                  "$desc": {"stock_quantity": product.quantity}})
+            mongo.db.shopping_cart.delete_one({"_id": ObjectId(product._id)})
+
+        flash("Your purchase has been successfull! We look forward to you buying from us again!")
+        return redirect(url_for("en_index"))
+
+    return render_template("en_gb/checkout.html", title="Checkout", context=context, total_items=context["total_items"](), form=form)
+
+
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
     app.run(debug=True)
