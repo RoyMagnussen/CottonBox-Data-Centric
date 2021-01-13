@@ -118,6 +118,14 @@ class FlaskTestCase(unittest.TestCase):
         tester = app.test_client()
         response = tester.get("/cookie_policy/", content_type="text/html")
         self.assertEqual(response.status_code, 200)
+        
+    def test_checkout_page(self):
+        """
+        Checks the status code for the `checkout` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get("/checkout/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
 
 
 if __name__ == "__main__":
