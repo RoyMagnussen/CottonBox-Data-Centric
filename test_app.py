@@ -110,6 +110,14 @@ class FlaskTestCase(unittest.TestCase):
         tester = app.test_client()
         response = tester.get("/sitemap/", content_type="text/html")
         self.assertEqual(response.status_code, 200)
+        
+    def test_cookie_policy_page(self):
+        """
+        Checks the status code for the `cookie_policy_page` route function to see if it exists.
+        """
+        tester = app.test_client()
+        response = tester.get("/cookie_policy/", content_type="text/html")
+        self.assertEqual(response.status_code, 200)
 
 
 if __name__ == "__main__":
