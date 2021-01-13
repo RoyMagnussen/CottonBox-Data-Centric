@@ -1,0 +1,63 @@
+{% extends 'en_gb/extends/layout.html' %}
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-12 col-md-6 py-5">
+                    <h1 class="display-4 section-heading">Delivering To:</h1>
+                    {{ form.hidden_tag() }}
+                    <div class="form-group my-3">
+                        {{ form.title.label(class="form-label") }}
+                        {{ form.title(class="form-select-lg") }}
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            {{ form.first_name.label(class="form-label") }}
+                            {{ form.first_name(class="form-control form-control-lg") }}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form.last_name.label(class="form-label") }}
+                            {{ form.last_name(class="form-control form-control-lg") }}
+                        </div>
+                    </div>
+                    <h1 class="display-4 section-heading">@</h1>
+                    <div class="form-group">
+                        {{ form.address_line_1.label(class="form-label") }}
+                        {{ form.address_line_1(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address_line_2.label(class="form-label") }}
+                        {{ form.address_line_2(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address_line_3.label(class="form-label") }}
+                        {{ form.address_line_3(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.address_line_4.label(class="form-label") }}
+                        {{ form.address_line_4(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.post_code.label(class="form-label") }}
+                        {{ form.post_code(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.country.label(class="form-label") }}
+                        {{ form.country(class="form-control form-control-lg") }}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                    <div class="d-grid gap-2 mx-auto">
+                        <button type="submit" class="btn btn-lg rounded-0 hvr-underline-from-center">
+                            Purchase
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                        <a role="button" href="{{ url_for('en_shopping_cart') }}" class="btn btn-lg rounded-0 hvr-underline-from-center">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
