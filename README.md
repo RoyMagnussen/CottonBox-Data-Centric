@@ -59,6 +59,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
+      - [3. Search Feature](#3-search-feature)
+      - [4. Social Media Links](#4-social-media-links)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -343,12 +345,36 @@ Allows the user to set the amount of items per page they would like to see.
 
 Creates additional pages based on the number of products per page and allows the user to view all of the products in the category where each page has the correct amount of products displayed.
 
+#### 3. Search Feature
+
+The search feature allows the user to search for product(s) based on the keywords that the user enters into the search field and they are then redirected to the search results page once they press enter.
+
+#### 4. Social Media Links
+
+Once the social media links become available to me, I will be updating the links in the footer to the respective social media accounts.
+
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
+- [HTML](https://www.html.com)
+  - The project uses **HTML** for the structure of each website page.
+- [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+  - The project uses **CSS** for styling the elements in each website page.
+- [Bootstrap](https://www.getbootstrap.com)
+  - The project uses **Bootstrap** as the base styling for the website.
 - [JQuery](https://jquery.com)
   - The project uses **JQuery** to simplify DOM manipulation.
+- [Flask Framework](https://flask.palletsprojects.com/en/1.1.x/)
+  - The project uses the **Flask Framework** to create web pages that also provide advanced functionallity that ordinary HTML, CSS and JavaScript would not be able to do so.
+- [Python](https://www.python.org)
+  - The project uses **Python** for all of the data collection and processing from MongoDB and the Flask Framework. Python is also needed in order for the Flask Framework to be operational.
+- [MongoDB](https://www.mongodb.com/)
+  - The project uses **MongoDB** for the data storage as a database for the products that are displayed in the project.
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
+  - The project uses the **Google Maps JavaScript API** in order to render a Google Map of where the compnay is located.
+- [EmailJs](https://emailjs.com)
+  - The project uses **EmailJs** to automatically send the company an email when the user has fillde out the form on the contact page.
 
 ## Testing
 
