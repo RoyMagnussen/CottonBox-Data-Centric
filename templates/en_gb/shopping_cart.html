@@ -29,13 +29,12 @@
                 <div class="col-12 d-grid gap-2">
                     {% if products|length == 0 %}
                     <!-- TODO: Add url_for function for checkout page -->
-                    <a class="btn disabled rounded-0 hvr-underline-from-center" href="#">
+                    <a class="btn disabled rounded-0 hvr-underline-from-center" href="{{ url_for('checkout') }}">
                         Checkout
                         <i class="bi bi-arrow-right"></i>
                     </a>
                     {% else %}
-                    <!-- TODO: Add url_for function for checkout page -->
-                    <a class="btn rounded-0 hvr-underline-from-center" href="#">
+                    <a class="btn rounded-0 hvr-underline-from-center" href="{{ url_for('checkout') }}">
                         Checkout
                         <i class="bi bi-arrow-right"></i>
                     </a>
