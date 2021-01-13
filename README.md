@@ -55,6 +55,7 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [12. Sitemap Page](#12-sitemap-page)
       - [13. Cookie Consent Banner](#13-cookie-consent-banner)
       - [14. Cookie Policy Page](#14-cookie-policy-page)
+      - [15. Checkout Page](#15-checkout-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [1. Products Per Page](#1-products-per-page)
       - [2. Pagination](#2-pagination)
@@ -328,6 +329,10 @@ This page notifies the user of the following:
 - How the website uses cookies.
 - What cookies the website creates and stores.
 - How to remove and manage cookies.
+
+#### 15. Checkout Page
+
+The checkout page allows the user to purchase the products in the shoppping cart by getting them to fill out the form with their details and the address of where they would like the products to be delivered to.
 
 ### Features Left to Implement
 
