@@ -378,23 +378,27 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+The test file for the project can be found [here](test_app.py).
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+I have used the python module `unittest` for the testing of my project.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+To run the tests, do the following:
 
-1. Contact form:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+1. Download the `.zip` version of this project.
+2. Once downloaded, unzip the project.
+3. Navigate to the root of the project folder. (CottonBox-Data-Centric)
+4. Using a terminal or command prompt navigate to the project root folder and run the following command:
+   1. On windows: `python test_app.py`
+   2. On Linux or Apple: `python3 test_app.py`
+5. In the terminal or command prompt, you will be able to see all of the tests that have passed.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+I have tested my site on all available browsers to myself which include:
+- Google Chrome
+- Mozilla Firefox
+- Opera Browser
+- Microsoft Edge
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+I have then further tested the website using the developer tools which are built into the browsers to simulate what the site would look like when viewed on other devices such as tablets and phones.
 
 ## Deployment
 
