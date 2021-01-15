@@ -8,10 +8,10 @@ from forms import EnContactForm, CheckoutForm
 app = Flask(__name__)
 
 # Sets the app "MONGO_URI" config variable to the "MONGO_URI" environment variable.
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 # Sets the app secret key to the "SECRET_KEY" environment variable. This is used for flashing messages to the user.
-app.secret_key = os.getenv("SECRET_KEY")
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # Creates a new PyMongo instance called "mongo" to manage the connection and queries to MongoDB.
 mongo = PyMongo(app)
@@ -247,7 +247,7 @@ def en_about_page() -> render_template:
     Returns:
         render_template: RRenders a specified template in the templates folder with the given context.
     """
-    context["map_api_key"] = os.getenv("MAP_API_KEY")
+    context["map_api_key"] = os.environ.get("MAP_API_KEY")
     return render_template("en_gb/about_page.html", title="About Us", context=context, total_items=context["total_items"]())
 
 
