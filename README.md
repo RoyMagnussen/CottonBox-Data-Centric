@@ -64,6 +64,8 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
+    - [Heroku](#heroku)
+    - [Locally](#locally)
   - [Credits](#credits)
     - [Media](#media)
     - [Acknowledgements](#acknowledgements)
@@ -401,15 +403,29 @@ I have then further tested the website using the developer tools which are built
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+### Heroku
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+In order for me to deploy my app to Heroku, these are the steps I had to follow:
 
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+1. Create a seperate branch called `deployment`.
+2. Create a `requirements.txt` file using this command: `pip freeze > requirements.txt` which is a Python specific file that lists all of the dependancies and installed packages in order for the app to function properly.
+3. Create a `Procfile` using this command: `echo web: python app.py` which is a Heroku specific file which instructs Heroku how to run the app.
+4. Create a `runtime.txt` file using this command: `echo python-3.9.1 > runtime.txt` which specifies the python version you would like Heroku to have installed and run your app. By default, Heroku has `python 3.7.6` installed, however, my app was developed using `python 3.9.1`.
+5. Create a new app on Heroku called `cottonbox` and link the `deployment` branch to it.
+6. Then in the settings for the app, I have to set the config variables that are used in the app such as the `MONGO_URI`, `SECRET_KEY`, `MAP_API_KEY` and the `EMAIL_PASSWORD` variables as well as the `HOST` and `PORT` variables or by using this command in heroku: `heroku local` which will detect if there is a `.env` file in the top level of the app and automatically set the variables in Heroku.
+7. Back in the deploy section for the app, I scrolled down to the bottom of the page where is says "Manual Deploy". I clicked this button and then Heroku proceeds to build and deploy the app.
+8. I am then able to go to: https://cottonbox.herokuapp.com/ where the app will be running.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+### Locally
+
+To run the app locally you will need to follow these steps:
+
+1. Go to the Repository for this project on github and download it either in the `.zip` format or through Github Desktop.
+2. Once it is downloaded and unzipped, open the project with your text editor of choice.
+3. In a terminal navigate to the project folder and run this command: `python -m venv venv` to create a virual environment for the packages to be install in.
+4. Next navigate to the `venv` folder and run the activate file. On Windows, the file will be found within the scripts folder. On Linux and Mac it will be located in the bin folder. To run the file on Windows, simply open the `activate.ps1` file and run with `CRTL + F5`. On Linux and Mac run the `activate` file with this command: `source activate` when you have navigated to the bin folder in a terminal.
+5. Once the virtual environment is running, run this command: `pip install -r requirements.txt`. This will install all of the packages that are listed in the `requirements.txt` file.
+6. Next either go to the `app.py` file and run it with `CRTL + F5` or in a terminal run this command: `python app.py` which will start the server in the terminal and provide you with a IP address to follow. it should be this: `127.0.0.1:5000` which is the localhost server that runs on your computer.
 
 ## Credits
 
