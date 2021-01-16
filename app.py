@@ -358,8 +358,8 @@ def checkout() -> render_template:
     if request.method == "POST":
         for product in list(mongo.db.shopping_cart.find()):
             mongo.db.products.find_one_and_update({"_id": ObjectId(product["id"])}, {
-                                                  "$desc": {"stock_quantity": product.quantity}})
-            mongo.db.shopping_cart.delete_one({"_id": ObjectId(product._id)})
+                                                  "$inc": {"stock_quantity": -product["quantity"]}})
+            mongo.db.shopping_cart.delete_one({"_id": ObjectId(product["_id"])})
 
         flash("Your purchase has been successfull! We look forward to you buying from us again!")
         return redirect(url_for("en_index"))
