@@ -344,7 +344,7 @@ def cookie_policy_page() -> render_template:
     return render_template("en_gb/cookie_policy.html", title="Cookie Policy", context=context, total_items=context["total_items"]())
 
 
-@app.route("/checkout/")
+@app.route("/checkout/", methods=["GET", "POST"])
 def checkout() -> render_template:
     """
     Renders `checkout.html` when the specified url(s) above are visited by the user.
