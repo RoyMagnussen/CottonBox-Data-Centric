@@ -207,7 +207,7 @@ def en_category_page(category_name) -> render_template:
         if len(size) > 0:
             filter["size"] = {"$in": size}
         if len(price) > 0:
-            filter["price"] = {"$lte": int(price)}
+            filter["price"] = {"$lte": {"$in": int(price)}}
 
         # Finds all of the products based on the filter dictionary
         products = list(mongo.db.products.find(filter))
