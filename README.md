@@ -63,8 +63,6 @@ Cotton Box does this by providing new and returning customers a modern, stylish 
       - [4. Social Media Links](#4-social-media-links)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
-    - [Manual Tests](#manual-tests)
-      - [1. Navigation](#1-navigation-1)
   - [Deployment](#deployment)
     - [Heroku](#heroku)
     - [Locally](#locally)
@@ -402,10 +400,6 @@ I have tested my site on all available browsers to myself which include:
 - Microsoft Edge
 
 I have then further tested the website using the developer tools which are built into the browsers to simulate what the site would look like when viewed on other devices such as tablets and phones and on different screen sizes including: 320px, 375px, 425px, 768px, 1024px, 1440px and 2560px horizontal on 100% zoom.
-
-### Manual Tests
-
-#### 1. Navigation
 
 ## Deployment
 
