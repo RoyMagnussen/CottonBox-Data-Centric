@@ -44,12 +44,9 @@
                         <i class="bi bi-arrow-down-short"></i>
                     </a>
                     <ul class="dropdown-menu rounded-0 border-0" aria-labelledby="languageSelectionDropdownMenu">
-                        {% for language in context.languages %}
                         <li class="nav-item">
-                            <!-- TODO: Add url_for function for {{ language.name }} page -->
-                            <a class="dropdown-item nav-link hvr-underline-from-center" href="#">{{ language.name }}</a>
+                            <a href="{{ url_for('en_index') }}" class="dropdown-item nav-link hvr-underline-from-center">English</a>
                         </li>
-                        {% endfor %}
                     </ul>
                 </li>
                 <!-- Shopping Cart Icon -->
