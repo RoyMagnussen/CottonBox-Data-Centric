@@ -369,4 +369,4 @@ def checkout() -> render_template:
 
 # Checks to see if the module name is equal to "main" so that the file can be called directly instead of from a terminal.
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get("IP"), port=os.environ.get("PORT"))
