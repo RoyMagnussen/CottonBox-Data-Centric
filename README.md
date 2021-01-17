@@ -389,8 +389,8 @@ To run the tests, do the following:
 2. Once downloaded, unzip the project.
 3. Navigate to the root of the project folder. (CottonBox-Data-Centric)
 4. Using a terminal or command prompt navigate to the project root folder and run the following command:
-   1. On windows: `python test_app.py`
-   2. On Linux or Apple: `python3 test_app.py`
+   1. On Windows: `python test_app.py`
+   2. On Linux or Mac: `python3 test_app.py`
 5. In the terminal or command prompt, you will be able to see all of the tests that have passed.
 
 I have tested my site on all available browsers to myself which include:
@@ -399,7 +399,7 @@ I have tested my site on all available browsers to myself which include:
 - Opera Browser
 - Microsoft Edge
 
-I have then further tested the website using the developer tools which are built into the browsers to simulate what the site would look like when viewed on other devices such as tablets and phones.
+I have then further tested the website using the developer tools which are built into the browsers to simulate what the site would look like when viewed on other devices such as tablets and phones and on different screen sizes including: 320px, 375px, 425px, 768px, 1024px, 1440px and 2560px horizontal on 100% zoom.
 
 ## Deployment
 
